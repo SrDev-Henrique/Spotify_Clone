@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./Assets/fav.png" type="image/x-icon">
+    <title>Spotify Clone</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="header-left">
+                <button class="btn btn-dots text-light bg-dark"><i class='bx bx-dots-horizontal-rounded'></i></button>
+            </div>
+            <div class="header-middle">
+                <div class="icon-container">
+                    <button class="btn btn-home bg-dark text-light"><i class='bx bx-home-alt-2'></i></button>
+                </div>
+                <div class="input-group search">
+                    <input type="search" class="search-input bg-dark" placeholder="O que você quer ouvir?"
+                        aria-label="O que você quer ouvir?" aria-describedby="basic-addon2">
+                    <button class="btn btn-navegar btn-outline-secondary bg-dark" type="button"><i
+                            class='bx bx-camera-home'></i></button>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="input-group-append">
+                    <button id="checar" class="btn btn-bell btn-outline-secondary bg-dark" type="button"><i
+                            class='bx bx-bell'></i></button>
+                    <button class="btn btn-group btn-outline-secondary bg-dark" type="button"><i
+                            class='bx bx-group'></i></button>
+                </div>
+                <div class="profile">
+                    <button class="btn" type="button"><img src="assets/profile.jpg"></button>
+                </div>
+            </div>
+
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div data-bs-autohide="false" class="toast mb-2 bg-light" id="mensagens-alerta">
+                    <header class="toast-header d-flex justify-content-between">
+                        <div class="text">
+                            <i class=" toast-icon-warning bi bi-exclamation-circle me-2"></i>
+                            <strong class="text-light">Me siga no Insta</strong>
+                        </div>
+                        <div class="toast-icons">
+                            <strong class="text-light"><i class='bx bxl-instagram'></i></strong>
+                            <button data-bs-dismiss="toast" class="btn btn-close"></button>
+                        </div>
+                    </header>
+                    <div id="body1" class="toast-body">
+                        <a href="https://www.instagram.com/hick.slv/">https://www.instagram.com/hick.slv/</a>
+                    </div>
+                </div>
+            
+                <div data-bs-autohide="false" class="toast mb-2 bg-light" id="mensagens-perigo">
+                    <header class="toast-header d-flex justify-content-between">
+                        <div class="text">
+                            <i class=" toast-icon-danger bi bi-x-circle me-2"></i>
+                            <strong class="text-light">Me siga no GitHub</strong>
+                        </div>
+                        <div class="toast-icons">
+                            <strong class="text-light"><i class='bx bxl-github'></i></strong>
+                            <button data-bs-dismiss="toast" class="btn btn-close"></button>
+                        </div>
+                    </header>
+                    <div id="body1" class="toast-body">
+                        <a href="https://github.com/SrDev-Henrique">https://github.com/SrDev-Henrique</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class=" body">
+        <div class="left-body">
+            <div class="left-content margin-bottom">
+                <button class=" btn btn-img"><img src="assets/left1.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left2.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left3.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left4.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left5.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left1.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left7.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left4.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left5.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left1.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left7.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left1.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left2.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left3.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left4.jpg"></button>
+                <button class=" btn btn-img"><img src="assets/left5.jpg"></button>
+            </div>
+        </div>
+    
+        <div class="middle-body">
+            <div class="container">
+                <div class="tab-container">
+                    <nav class="nav">
+                        <button data-bs-toggle="tab" data-bs-target="#tudo" class="btn btn-options active" type="button">Tudo</button>
+                        <button data-bs-toggle="tab" data-bs-target="#musicas" class="btn btn-options" type="button">Músicas</button>
+                        <button data-bs-toggle="tab" data-bs-target="#podcast" class="btn btn-options" type="button">Podcasts</button>
+                    </nav>
+                    <div class="tab-content">
+                        <div id="tudo" class="tab-pane active">
+                            <div id="row" class="row">
+                                <div class="col">
+                                    <div id="my-card" class="card">
+                                        <div class="card-body">
+                                            <div class="left">
+                                                <img id="my-card-image" src="assets/left1.jpg">
+                                            </div>
+                                            <div class="card-text">
+                                                <p>Músicas Curtidas</p>
+                                            </div>
+                                            <span class="card-span"><i class='bx bx-play'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div id="my-card" class="card">
+                                        <div class="card-body">
+                                            <div class="left">
+                                                <img id="my-card-image" src="assets/left3.jpg">
+                                            </div>
+                                            <div class="card-text">
+                                                <p>Álbum 1</p>
+                                            </div>
+                                            <span class="card-span"><i class='bx bx-play'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div id="my-card" class="card">
+                                        <div class="card-body">
+                                            <div class="left">
+                                                <img id="my-card-image" src="assets/left2.jpg">
+                                            </div>
+                                            <div class="card-text">
+                                                <p>Álbum 2</p>
+                                            </div>
+                                            <span class="card-span"><i class='bx bx-play'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div id="my-card" class="card">
+                                        <div class="card-body">
+                                            <div class="left">
+                                                <img id="my-card-image" src="assets/left3.jpg">
+                                            </div>
+                                            <div class="card-text">
+                                                <p>Artista Rádio</p>
+                                            </div>
+                                            <span class="card-span"><i class='bx bx-play'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div id="my-card" class="card">
+                                        <div class="card-body">
+                                            <div class="left">
+                                                <img id="my-card-image" src="assets/left4.jpg">
+                                            </div>
+                                            <div class="card-text">
+                                                <p>Álbum 3</p>
+                                            </div>
+                                            <span class="card-span"><i class='bx bx-play'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div id="my-card" class="card">
+                                        <div class="card-body">
+                                            <div class="left">
+                                                <img id="my-card-image" src="assets/left5.jpg">
+                                            </div>
+                                            <div class="card-text">
+                                                <p>Suas Músicas</p>
+                                            </div>
+                                            <span class="card-span"><i class='bx bx-play'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div id="my-card" class="card">
+                                        <div class="card-body">
+                                            <div class="left">
+                                                <img id="my-card-image" src="assets/left4.jpg">
+                                            </div>
+                                            <div class="card-text">
+                                                <p>Artista Rádio</p>
+                                            </div>
+                                            <span class="card-span"><i class='bx bx-play'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div id="my-card" class="card">
+                                        <div class="card-body">
+                                            <div class="left">
+                                                <img id="my-card-image" src="assets/left1.jpg">
+                                            </div>
+                                            <div class="card-text">
+                                                <p>Novidades</p>
+                                            </div>
+                                            <span class="card-span"><i class='bx bx-play'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="musicas" class="tab-pane musicas-container">
+                            <div class="disk-container" index="0">
+                                <div class="left">
+                                    <div class="song-image">
+                                        <img src="assets/music-1.jpg">
+                                    </div>
+                                    <span class="absolute-span"><i class='bx bx-play'></i></span>
+                                    <div class="song-details">
+                                        <div class="top">
+                                            <h5 class="song-name">Decair</h5>
+                                        </div>
+                                        <div class="bottom">
+                                            <p class="song-artist">Novatroop</p>
+                                            <span>,</span>
+                                            <p class="ml">Éodan</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <div class="pulse">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <button class="btn btn-dots text-secondary"><i class='bx bx-dots-horizontal-rounded'></i></button>
+                                </div>
+                            </div>
+
+                            <div class="disk-container" index="1">
+                                <div class="left">
+                                    <div class="song-image">
+                                        <img src="assets/music-2.jpg">
+                                    </div>
+                                    <span class="absolute-span"><i class='bx bx-play'></i></span>
+                                    <div class="song-details">
+                                        <div class="top">
+                                            <h5 class="song-name">Vida Longa ao Rei</h5>
+                                        </div>
+                                        <div class="bottom">
+                                            <p class="song-artist">Henrique Mendonça</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <div class="pulse">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <button class="btn btn-dots text-secondary"><i class='bx bx-dots-horizontal-rounded'></i></button>
+                                </div>
+                            </div>
+
+                            <div class="disk-container" index="2">
+                                <div class="left">
+                                    <div class="song-image">
+                                        <img src="assets/music-3.jpg">
+                                    </div>
+                                    <span class="absolute-span"><i class='bx bx-play'></i></span>
+                                    <div class="song-details">
+                                        <div class="top">
+                                            <h5 class="song-name">Cachecol</h5>
+                                        </div>
+                                        <div class="bottom">
+                                            <p class="song-artist">Kamaitachi</p>
+                                            <span>,</span>
+                                            <p class="ml">Sanza</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                        <div class="pulse">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <button class="btn btn-dots text-secondary"><i class='bx bx-dots-horizontal-rounded'></i></button>
+                                </div>
+                            </div>
+
+                            <div class="disk-container" index="3">
+                                <div class="left">
+                                    <div class="song-image">
+                                        <img src="assets/music-4.jpg">
+                                    </div>
+                                    <span class="absolute-span"><i class='bx bx-play'></i></span>
+                                    <div class="song-details">
+                                        <div class="top">
+                                            <h5 class="song-name">Inevitável Destino</h5>
+                                        </div>
+                                        <div class="bottom">
+                                            <p class="song-artist">Henrique Mendonça</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                        <div class="pulse">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <button class="btn btn-dots text-secondary"><i class='bx bx-dots-horizontal-rounded'></i></button>
+                                </div>
+                            </div>
+
+                            <div class="disk-container" index="4">
+                                <div class="left">
+                                    <div class="song-image">
+                                        <img src="assets/music-5.jpg">
+                                    </div>
+                                    <span class="absolute-span"><i class='bx bx-play'></i></span>
+                                    <div class="song-details">
+                                        <div class="top">
+                                            <h5 class="song-name">Legends Never Die</h5>
+                                        </div>
+                                        <div class="bottom">
+                                            <p class="song-artist">League of Legends</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                        <div class="pulse">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <button class="btn btn-dots text-secondary"><i class='bx bx-dots-horizontal-rounded'></i></button>
+                                </div>
+                            </div>
+
+                            <div class="disk-container" index="5">
+                                <div class="left">
+                                    <div class="song-image">
+                                        <img src="assets/music-6.jpg">
+                                    </div>
+                                    <span class="absolute-span"><i class='bx bx-play'></i></span>
+                                    <div class="song-details">
+                                        <div class="top">
+                                            <h5 class="song-name">Querido Anjo</h5>
+                                        </div>
+                                        <div class="bottom">
+                                            <p class="song-artist">TakaB</p>
+                                            <span>,</span>
+                                            <p class="ml">Shinysz</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <div class="pulse">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <button class="btn btn-dots text-secondary"><i class='bx bx-dots-horizontal-rounded'></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="podcast" class="podcast-container tab-pane">
+                            <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+
+                                    <div data-bs-interval="5000" class="carousel-item active">
+                                        <div class="container sixty-container">
+                                            <header>
+                                                <h2>60 songs that explain the 90's</h2>
+                                                <div class="text">
+                                                    <p class="dark-text">Episódio <i class='bx bxs-circle'></i></p>
+                                                    <p class="author">SrDevHenrique</p>
+                                                </div>
+                                            </header>
+                                            <img class="d-block" src="assets/podcast-1.jpg">
+                                            <div class="pod-info">
+                                                <div class="info">
+                                                    <div class="info-text"><p><span class="dark-text">23 de out. <i class='bx bxs-circle'></i> 1:27:25 <i class='bx bxs-circle'></i></span>Part of The Ringer podcast network, 60 Songs That Explain the ’90s has built an impressive listener community around a
+                                                    pretty simple premise: Everyone remembers the 90s.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="spans-absolute">
+                                                <i class='bx bx-dots-horizontal-rounded'></i>
+                                                <i class='bx bx-plus-circle'></i>
+                                                <button class="pod-play"><i class='bx bx-play'></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div data-bs-interval="5000" class="carousel-item">
+                                        <div class="container heavy-container">
+                                            <header>
+                                                <h2>Heavy Weight</h2>
+                                                <div class="text">
+                                                    <p class="dark-text">Episódio <i class='bx bxs-circle'></i></p>
+                                                    <p class="author">SrDevHenrique</p>
+                                                </div>
+                                            </header>
+                                            <img class="d-block" src="assets/podcast-2.jpg">
+                                            <div class="pod-info">
+                                                <div class="info">
+                                                    <div class="info-text">
+                                                        <p><span class="dark-text">23 de out. <i class='bx bxs-circle'></i> 1:27:25 <i
+                                                                    class='bx bxs-circle'></i></span>Every episode of Heavyweight begins with a phone call, setting in motion a journey into someone’s past in pursuit of
+                                                                    answers to lingering questions. A missed moment. A lost love. A dream that didn’t come true.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="spans-absolute">
+                                                <i class='bx bx-dots-horizontal-rounded'></i>
+                                                <i class='bx bx-plus-circle'></i>
+                                                <button class="pod-play"><i class='bx bx-play'></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-bs-interval="5000" class="carousel-item">
+                                        <div class="container science-container">
+                                            <header>
+                                                <h2>Science VS</h2>
+                                                <div class="text">
+                                                    <p class="dark-text">Episódio <i class='bx bxs-circle'></i></p>
+                                                    <p class="author">SrDevHenrique</p>
+                                                </div>
+                                            </header>
+                                            <img class="d-block" src="assets/podcast-1.jpg">
+                                            <div class="pod-info">
+                                                <div class="info">
+                                                    <div class="info-text">
+                                                        <p><span class="dark-text">23 de out. <i class='bx bxs-circle'></i> 1:27:25 <i
+                                                                    class='bx bxs-circle'></i></span>Science Vs is one of our favorite science podcasts. It’s easy to hear why. The show examines everything from health
+                                                                    trends to UFOs, rigorously testing claims against empirical evidence.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="spans-absolute">
+                                                <i class='bx bx-dots-horizontal-rounded'></i>
+                                                <i class='bx bx-plus-circle'></i>
+                                                <button class="pod-play"><i class='bx bx-play'></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <button data-bs-target="#carousel" data-bs-slide="prev" class="carousel-control-prev" type="button">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button data-bs-target="#carousel" data-bs-slide="next" class="carousel-control-next" type="button">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="daily-mix">
+                    <div class="title">
+                        <a href="#"><h4>Feito para você</h4></a>
+                        <a href="#"><h6>Mostrar Mais</h6></a>
+                    </div>
+
+                    <div class="daily-mix-songs">
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img1.jpeg">
+                                </div>                                <p class="img-p">Radar de Novidades</p>
+                                <p class="bottom-p">Conheça os lançamentos dos artistas que você segue</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img2.jpeg">
+                                </div>                                <p class="img-p">Daily-Mix 1</p>
+                                <p class="bottom-p">M4rkim, Chrono Rapper, Kaito Rapper e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img3.jpeg">
+                                </div>                                <p class="img-p">Daily-Mix 2</p>
+                                <p class="bottom-p">Lexclash, 7 Minutoz, MHRAP e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img4.jpeg">
+                                </div>                                <p class="img-p">Daily-Mix 3</p>
+                                <p class="bottom-p">Melanie Martinez, Nessa Barrett, AVIVA e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img5.jpeg">
+                                </div>                                <p class="img-p">Daily-Mix 4</p>
+                                <p class="bottom-p">Rihanna, Alec Benjamin, Katy Perry e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img6.jpeg">
+                                </div>                                <p class="img-p">Daily-Mix 5</p>
+                                <p class="bottom-p">Eli Soares, fhop music, Ton Carfi e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="daily-mix">
+                    <div class="title">
+                        <a href="#">
+                            <h4>Estações recomendadas</h4>
+                        </a>
+                        <a href="#">
+                            <h6>Mostrar Mais</h6>
+                        </a>
+                    </div>
+                
+                    <div class="daily-mix-songs">
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img7.jpeg">
+                                </div>                                <p class="img-p">Radar de Novidades</p>
+                                <p>Conheça os lançamentos dos artistas que você segue</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img8.jpeg">
+                                </div>                                <p class="img-p">Daily-Mix 1</p>
+                                <p>M4rkim, Chrono Rapper, Kaito Rapper e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img9.jpeg">
+                                </div>                                <p class="img-p">Daily-Mix 2</p>
+                                <p>Lexclash, 7 Minutoz, MHRAP e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                            </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img10.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 3</p>
+                                <p>Melanie Martinez, Nessa Barrett, AVIVA e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img11.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 4</p>
+                                <p>Rihanna, Alec Benjamin, Katy Perry e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img12.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 5</p>
+                                <p>Eli Soares, fhop music, Ton Carfi e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="daily-mix">
+                    <div class="title">
+                        <a href="#">
+                            <h4>Tocados recentemente</h4>
+                        </a>
+                        <a href="#">
+                            <h6>Mostrar Mais</h6>
+                        </a>
+                    </div>
+                
+                    <div class="daily-mix-songs">
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img13.jpeg">
+                                </div>
+                                <p class="img-p">Radar de Novidades</p>
+                                <p>Conheça os lançamentos dos artistas que você segue</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img14.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 1</p>
+                                <p>M4rkim, Chrono Rapper, Kaito Rapper e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img15.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 2</p>
+                                <p>Lexclash, 7 Minutoz, MHRAP e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                            </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img16.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 3</p>
+                                <p>Melanie Martinez, Nessa Barrett, AVIVA e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img17.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 4</p>
+                                <p>Rihanna, Alec Benjamin, Katy Perry e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img18.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 5</p>
+                                <p>Eli Soares, fhop music, Ton Carfi e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="daily-mix margin-bottom">
+                    <div class="title">
+                        <a href="#">
+                            <h4>Seus mixes mais ouvidos</h4>
+                        </a>
+                        <a href="#">
+                            <h6>Mostrar Mais</h6>
+                        </a>
+                    </div>
+                
+                    <div class="daily-mix-songs">
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img19.jpeg">
+                                </div>
+                                <p class="img-p">Radar de Novidades</p>
+                                <p>Conheça os lançamentos dos artistas que você segue</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img20.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 1</p>
+                                <p>M4rkim, Chrono Rapper, Kaito Rapper e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img21.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 2</p>
+                                <p>Lexclash, 7 Minutoz, MHRAP e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img22.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 3</p>
+                                <p>Melanie Martinez, Nessa Barrett, AVIVA e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img23.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 4</p>
+                                <p>Rihanna, Alec Benjamin, Katy Perry e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                        <div class="daily-card-container">
+                            <div class="daily-card">
+                                <div class="top">
+                                    <img src="assets/img24.jpeg">
+                                </div>
+                                <p class="img-p">Daily-Mix 5</p>
+                                <p>Eli Soares, fhop music, Ton Carfi e mais</p>
+                                <span class="daily-card-span"><i class='bx bx-play'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="right-body">
+            <div class="container">
+                <div class="card">
+                    <header class="card-header">
+                        <p>Decair</p>
+                        <div class="icons">
+                            <button class="btn btn-dots text-secondary"><i class='bx bx-dots-horizontal-rounded'></i></button>
+                            <button class="btn close text-secondary"><i class='bx bx-x'></i></button>
+                        </div>
+                    </header>
+                    <img src="assets/music-1.jpg">
+                    <div class="card-body">
+                        <div class="left">
+                            <div class="card-title">
+                                <h4>Decair</h4>
+                            </div>
+                            <div class="card-text">
+                                <p>Novatroop</p>
+                                <span>,</span>
+                                <p class="ml">Éodan</p>
+                            </div>
+                        </div>
+                        <div class="icons">
+                            <i class='bx bx-play-circle'></i>
+                            <div class="check">
+                                <i class='bx bx-check-circle'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="disks margin-bottom">
+                    <div class="container">
+                        <div class="credit-container">
+                            <div class="top">
+                                <header class="credit-header">
+                                    <h5 class="credit">Créditos</h5>
+                                    <a href="#" class="show-more">Mostrar tudo</a>
+                                </header>
+                                
+                                <div class="credit-content">
+                                    <div class="top-content">
+                                        <div class="left">
+                                            <h6 class="name">Novatroop</h6>
+                                            <p class="role">Artista Principal</p>
+                                        </div>
+                                        <div class="right">
+                                            <button class="btn" type="button">Deixar de seguir</button>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="mid-content">
+                                        <div class="left">
+                                            <h6 class="name">ÉoDan</h6>
+                                            <p class="role">Participação Especial</p>
+                                        </div>
+                                        <div class="right">
+                                            <button class="btn" type="button">Seguir</button>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="bottom-content">
+                                        <div>
+                                            <h6 class="name">Joao Victor Costa Lopes</h6>
+                                            <p class="role">Compositor</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="music-display">
+            <div id="music-info" class="music-info">
+                <div class="disk-container">
+                    <div class="left">
+                        <div id="song-image" class="song-image">
+                            <img src="assets/music-1.jpg">
+                        </div>
+                        <span class="absolute-span"><i class='bx bx-play'></i></span>
+                        <div id="song-details" class="song-details">
+                            <div class="top">
+                                <h5 id="song-name" class="song-name"></h5>
+                            </div>
+                            <div class="bottom">
+                                <p id="song-artist" class="song-artist"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <div class="pulse">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                </div>
+                        <button class="btn btn-dots text-secondary"><i class='bx bx-dots-horizontal-rounded'></i></button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="music-control">
+                <div class="controls">
+                    <div class="prev">
+                        <i id="prev" class='bx bx-skip-previous'></i>
+                    </div>
+                    <div class="play-pause">
+                        <i id="play-pause" class='bx bx-play'></i>
+                    </div>
+                    <div class="next">
+                        <i id="next" class='bx bx-skip-next'></i>
+                    </div>
+                </div>
+        
+                <div id="progress-area" class="progress-area">
+                    <div id="progress-bar" class="progress-bar"></div>
+                    <div class="timer">
+                        <span id="current-time" class="current"></span>
+                        <span id="duration" class="current"></span>
+                    </div>
+                </div>
+
+                <audio id="main-audio" src=""></audio>
+            </div>
+        
+            <div class="music-option">
+                <button class="btn btn-dots text-secondary"><i class='bx bx-dots-horizontal-rounded'></i></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+
+    <script src="js/music-list.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/music.js"></script>
+    <script>
+        const ativadorToast = document.getElementById('checar');
+        const mensagemAlerta = document.getElementById('mensagens-alerta');
+        const mensagemPerigo = document.getElementById('mensagens-perigo');
+        const mensagemSucesso = document.getElementById('mensagens-sucesso')
+
+        if (ativadorToast) {
+            ativadorToast.addEventListener('click', function () {
+                const toastAlerta = new bootstrap.Toast(mensagemAlerta);
+                const toastPerigo = new bootstrap.Toast(mensagemPerigo);
+                const toastSucesso = new bootstrap.Toast(mensagemSucesso);
+
+                toastAlerta.show();
+                toastPerigo.show();
+                toastSucesso.show();
+            })
+        }
+    </script>
+</body>
+</html>
