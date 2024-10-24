@@ -1123,6 +1123,10 @@ body{
     color: #121212;
 }
 
+.toast .toast-icons .btn-close i{
+    color: #eee;
+}
+
 @keyframes fadeRight{
     0%{
         opacity: 0;
