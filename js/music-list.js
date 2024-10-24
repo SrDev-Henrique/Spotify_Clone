@@ -24,14 +24,14 @@ const allMusics = [
         src: "music-4"
     },
     {
-        name: "Querido Anjo",
-        artist: "TakaB, Shinysz",
+        name: "Legends Never Die",
+        artist: "League of Legends",
         img: "music-5",
         src: "music-5"
     },
     {
-        name: "Legends Never Die",
-        artist: "League of Legends",
+        name: "Querido Anjo",
+        artist: "TakaB, Shinysz",
         img: "music-6",
         src: "music-6"
     }
