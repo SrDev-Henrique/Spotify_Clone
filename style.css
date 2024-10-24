@@ -15,7 +15,7 @@ body{
 
 .header{
     background-color: #000;
-    padding: 0.5rem 0.5rem 0;
+    padding: 0.5rem 0.5rem;
 }
 
 .header, .music-control .progress-area .timer {
@@ -45,6 +45,17 @@ body{
 
 .header-middle {
     gap: 1rem;
+}
+
+.header-middle input,
+.header-middle .btn-navegar,
+.header-middle .btn-group,
+.header-middle .btn-bell,
+.header-middle .btn-home,
+.header-middle .btn-dots{
+    background-color: #121212;
+    color: #e8e8ed;
+    border: 0.1px solid #e8e8ed3a;
 }
 
 .search-input {
@@ -304,6 +315,7 @@ body{
 
 .daily-mix .title{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     opacity: 0;
     transition: 0.4s ease-in-out;
@@ -396,7 +408,7 @@ body{
 
 .daily-card .img-p {
     position: absolute;
-    bottom: 50%;
+    bottom: 43%;
     transform: translateY(160%);
     width: 100%;
     padding: 0.3rem;
@@ -942,7 +954,6 @@ body{
     opacity: 1;
 }
 
-
 .music-display .music-info .disk-container .left{
     font-size: 0.8rem;
 }
@@ -951,8 +962,12 @@ body{
     background-color: transparent;
 }
 
-.music-display .music-info .disk-container:hover .absolute-span,
-.music-display .music-info .disk-container:hover .btn-dots{
+.music-display .music-info .disk-container:hover .left img{
+    filter: brightness(100%);
+}
+
+.music-display .music-info .disk-container .absolute-span,
+.music-display .music-info .disk-container .btn-dots{
     display: none;
 }
 
@@ -1133,6 +1148,10 @@ body{
         grid-template-columns: 100%;
     }
 
+    .header{
+        padding: 0;
+    }
+
     .header-left{
         display: none;
     }
@@ -1152,12 +1171,53 @@ body{
         margin-top: 0.5rem;
     }
 
+    .card-span{
+        font-size: 1rem;
+        padding: 0 0.25rem;
+    }
+
+    .carousel-item .container{
+        width: 100%;
+    }
+
+    .carousel-item .container header {
+        width: 300px;
+        text-align: start;
+    }
+
+    .carousel-item .container header h2{
+        font-size: 1.6rem;
+    }  
+
+    .carousel-item .container header p,
+    .carousel-item .container .pod-info .info-text,
+    .daily-mix .title h6{
+        font-size: 0.8rem;
+    }
+
+    .carousel-item .container .pod-info {
+        width: 300px;
+        text-align: start;
+    }
+
+    .daily-mix .title h4{
+        font-size: 1rem;
+    }
+
+    .daily-card .img-p{
+        font-size: 1.05rem;
+    }
+
     .music-info {
         width: 240px;
     }
 
     .music-info h5 {
         font-size: 1.1rem;
+    }
+
+    .disk-container .option .pulse {
+        right: 12%;
     }
 
     .right-body{
@@ -1181,5 +1241,29 @@ body{
 
     .music-info p{
         font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .music-option {
+        display: none;
+    }
+
+    .music-control .controls{
+        margin-right: -13rem;
+    }
+
+    .music-control .controls .play-pause{
+        background-color: transparent;
+    }
+
+    .music-control .controls .play-pause i{
+        color: #fff;
+    }
+
+    .music-control .progress-area{
+        margin-bottom: -0.69rem;
+        width: 300px;
     }
 }
