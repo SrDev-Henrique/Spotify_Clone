@@ -34,5 +34,23 @@ const allMusics = [
         artist: "TakaB, Shinysz",
         img: "music-6",
         src: "music-6"
+    },
+    {
+        name: "Essência do Caos",
+        artist: "Novatroop",
+        img: "music-7",
+        src: "music-7"
+    },
+    {
+        name: "Billie Bossa Nova",
+        artist: "Billie Eilish",
+        img: "music-8",
+        src: "music-8"
+    },
+    {
+        name: "BABYDOLL (Speed)",
+        artist: "Ari Abdul",
+        img: "music-9",
+        src: "music-9"
     }
 ]
