@@ -13,6 +13,10 @@ body{
     overflow: hidden;
 }
 
+a{
+    text-decoration: none;
+}
+
 .header{
     background-color: #000;
     padding: 0.5rem;
