@@ -94,17 +94,21 @@
     z-index: 4;
 }
 
-@media screen and (mac-width: 1000px) {
+@media screen and (max-width: 1000px) {
     .intro {
     height: 150px;
 }
 
-.intro .image-container {
-    width: 150px;
-}
+    .intro .image-container {
+        width: 150px;
+    }
 }
 
 @media screen and (max-width: 700px) {
+    .middle-body {
+        position: relative;
+    }
+
     .intro {
         height: 120px;
     }
@@ -115,9 +119,5 @@
 
     .intro .intro-text h6 {
         margin-bottom: 0;
-    }
-
-    .body {
-        grid-template-rows: 80% 10%;
     }
 }
