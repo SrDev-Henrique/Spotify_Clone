@@ -139,6 +139,7 @@ a{
     background: #121212;
     border-radius: 10px;
     margin-bottom: 1rem;
+    padding-bottom: 2rem;
     overflow-y: auto;
     scrollbar-width: none;
 }
@@ -965,7 +966,7 @@ a{
     transition: 0.8s ease-in-out;
     min-width: 50%;
     height: 5.5rem;
-    z-index: 2;
+    z-index: 4;
 }
 
 .music-display.visible{

@@ -90,18 +90,14 @@
     transform: translateY(0);
 }
 
-.music-display {
-    z-index: 4;
-}
-
-@media screen and (mac-width: 1000px) {
+@media screen and (max-width: 1000px) {
     .intro {
     height: 150px;
 }
 
-.intro .image-container {
-    width: 150px;
-}
+    .intro .image-container {
+        width: 150px;
+    }
 }
 
 @media screen and (max-width: 700px) {
