@@ -139,6 +139,7 @@ a{
     background: #121212;
     border-radius: 10px;
     margin-bottom: 1rem;
+    padding-bottom: 2rem;
     overflow-y: auto;
     scrollbar-width: none;
 }

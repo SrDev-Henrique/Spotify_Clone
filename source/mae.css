@@ -90,10 +90,6 @@
     transform: translateY(0);
 }
 
-.music-display {
-    z-index: 4;
-}
-
 @media screen and (max-width: 1000px) {
     .intro {
     height: 150px;
