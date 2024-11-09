@@ -116,4 +116,8 @@
     .intro .intro-text h6 {
         margin-bottom: 0;
     }
+
+    .body {
+        grid-template-rows: 85% 10%;
+    }
 }
