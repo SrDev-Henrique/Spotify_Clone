@@ -9,6 +9,7 @@ window.onload = function() {
     const musicDisplay = document.querySelectorAll('.music-display');
     const carouselContainer = document.querySelectorAll('.carousel-item')
     const credit = document.querySelectorAll('.credit-container')
+    const middleBody = document.querySelector('.middle-body');
 
     const observerDailyCards = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -44,4 +45,16 @@ window.onload = function() {
     allElements.forEach(element => {
         observer.observe(element);
     });
+
+    const observeMiddleBody = new IntersectionObserver((entries) => { 
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                middleBody.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1 
+    });
+
+    observeMiddleBody.observe(middleBody);
 };

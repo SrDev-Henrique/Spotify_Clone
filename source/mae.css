@@ -1,0 +1,114 @@
+.middle-body {
+    position: relative;
+}
+
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    backdrop-filter: blur(60px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 2;
+}
+
+.middle-body.visible .intro>.container {
+    opacity: 1;
+}
+
+.intro-background {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to bottom, #e89a4c9d 5%, #121212 70%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 1;
+    transition: 1s ease-in-out;
+}
+
+.middle-body.visible .intro-background {
+    height: 300px;
+}
+
+.intro>.container {
+    position: relative;
+    display: flex;
+    opacity: 0;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    height: clamp(120px, 200px, 200px);
+    width: 100%;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.intro>.container .image-container {
+    width: clamp(120px, 200px, 200px);
+    height: 100%;
+}
+
+.intro>.container .image-container img {
+    border-radius: 0.5rem;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.intro>.container .intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.intro>.container .intro-text h6 {
+    color: #e8e8ed;
+    margin-bottom: -0.3rem;
+}
+
+.intro>.container .intro-text h1 {
+    font-weight: bold;
+    font-size: 5vw;
+}
+
+.intro>.container .intro-text p{
+    color: #b4b4b4;
+}
+
+.disk-container {
+    position: relative;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: 1s cubic-bezier(0.25, 1.75, 0.5, 1);
+}
+
+.disk-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (mac-width: 1000px) {
+    .intro>.container {
+    height: 150px;
+}
+
+.intro>.container .image-container {
+    width: 150px;
+}
+}
+
+@media screen and (max-width: 700px) {
+    .intro>.container {
+        height: 120px;
+    }
+
+    .intro>.container .image-container {
+        width: 120px;
+    }
+
+    .intro>.container .intro-text h6 {
+        margin-bottom: 0;
+    }
+}
